@@ -5,11 +5,11 @@ function Cart(props) {
   const { match, data } = props;
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(1);
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({});
 
   const getProduct = () => {
     if (match.params.id) {
-      const item = data.filter((p) => {
+      const item = data.find((p) => {
         return p._id === match.params.id;
       });
       setProduct(item);
@@ -26,7 +26,7 @@ function Cart(props) {
   }
   convertQueryString(quantity);
 
-  let { name, numReviews, description, price, image, countInStock } = product;
+  let { name, price, image} = product;
 
   console.log(image);
 
@@ -38,11 +38,11 @@ function Cart(props) {
         <div className="list-group-item">
           <div className="row">
             <div className="col-md-2">
-              <img src={`https://winkelwagon.herokuapp.com${image}`} alt="" />
+              <img src={`https://winkelwagon.herokuapp.com${image}`} alt="" style={{width:"150px", height:"150px"}}/>
             </div>
-            <div className="col-md-3"></div>
-            <div className="col-md-2"></div>
-            <div className="col-md-2"></div>
+            <div className="col-md-3">{name}</div>
+            <div className="col-md-2">{price}</div>
+            <div className="col-md-2">{quantity}</div>
             <div className="col-md-2"></div>
           </div>
         </div>

@@ -34,9 +34,6 @@ function ProductDetail(props) {
     setQuantity(minius);
   };
 
-  // const handleAddToCart = (product) => {
-  //   console.log(product);
-  // };
   return (
     <div className="row">
       <h1> SHOPPING BAG</h1>
@@ -66,7 +63,6 @@ function ProductDetail(props) {
               </div>
             </div>
             <div className="list-group-item">
-              {/* <button>-</button> */}
               <div className="row">
                 <div className="col-3">Quantity</div>
                 <div className="col">
@@ -137,16 +133,3 @@ function ProductDetail(props) {
 
 export default ProductDetail;
 
-// useEffect(() => {
-//   async function getAPI() {
-//     const { data: respone } = await axios.get(
-//       `https://winkelwagon.herokuapp.com/api/products/${match.params.id}`
-//     );
-//     //
-//     setProduct(respone);
-//     //console.log(respone);
-//     // console.log(product);
-//   }
-//   getAPI();
-//   // console.log(product);
-// }, []);
