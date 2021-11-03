@@ -1,0 +1,19 @@
+.navbar {
+ width: 960px;
+ height: 46px;
+ margin-top: 10px;
+ margin-left: 280px;
+ background-color: rgb(148, 214, 245) ;
+ position: inherit;
+ border: 1px;
+ border-radius: 50px;
+ padding-top: 0% !important;
+}
+
+a {
+ text-decoration: none !important;
+ color: #dbecf3 !important;
+ margin-left: 25px;
+ margin-right: 9px;
+}
+

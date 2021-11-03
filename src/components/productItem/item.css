@@ -1,0 +1,16 @@
+.card {
+    margin-bottom: 20px;
+    margin-right: 0px;
+    max-width: 18rem;
+    height: 100%;
+    position: center;
+  }
+  a{
+    margin: 10px 10px 0px 10px;
+  }
+  .card-title {
+      height: 48px;
+  }
+ .col-lg-4 {
+     margin-bottom: 20px;
+ }

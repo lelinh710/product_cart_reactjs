@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function ProductDetail(props) {
-  const { match, data } = props;
-  const [quantity, setQuantity] = useState(1);
+  const { match, data, onDecrement, OnIncrement, onChangeQty, qty } = props;
+
   const [product, setProduct] = useState({});
 
   const getProduct = () => {
@@ -20,19 +20,8 @@ function ProductDetail(props) {
 
   let { name, numReviews, description, price, image, countInStock } = product;
 
-  const handleOnChange = (evt) => {
-    const value = evt.target.value;
-    setQuantity(value);
-  };
-  const handleIncrement = (q) => {
-    let plus = q + 1;
-    setQuantity(plus);
-  };
 
-  const handleDecrement = (quantity) => {
-    let minius = quantity - 1;
-    setQuantity(minius);
-  };
+
 
   return (
     <div className="row">
@@ -69,8 +58,8 @@ function ProductDetail(props) {
                   <div className="quantity">
                     <button
                       className="quantity_2KdYzP"
-                      onClick={() => handleDecrement(quantity)}
-                      disabled={quantity === 0 ? "disable" : ""}
+                      onClick={onDecrement}
+                      disabled={qty === 0 ? "disable" : ""}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -87,13 +76,13 @@ function ProductDetail(props) {
                     <input
                       type="text"
                       style={{ width: "50px" }}
-                      value={quantity}
-                      onChange={handleOnChange}
+                      value={qty}
+                      onChange={onChangeQty}
                     />
                     <button
-                      className="quantity _2KdYzP"
-                      onClick={() => handleIncrement(quantity)}
-                      disabled={quantity === countInStock ? "disable" : ""}
+                      className="qty _2KdYzP"
+                      onClick={OnIncrement}
+                      disabled={qty === countInStock ? "disable" : ""}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +105,7 @@ function ProductDetail(props) {
             <div className="d-grid list-group-item">
               <div className="row">
                 <div className="col-12">
-                  <Link to={`/cart/${match.params.id}?qty=${quantity}`}>
+                  <Link to={`/cart/${match.params.id}?qty=${qty}`}>
                     <button className="btn-success btn btn-primary">
                       Add to cart
                     </button>

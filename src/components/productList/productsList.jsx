@@ -1,11 +1,11 @@
 import React from "react";
-
-import ProductItem from "./productItem";
+import "./List.css";
+import ProductItem from "../productItem/productItem";
 
 function ProductsList({ data }) {
   return (
     <div className="row justify-content-center text-center">
-  <div className="col-md-8 col-lg-6">
+  <div className="col-md-8">
     <div className="header">
       <h3>Featured Product</h3>
     </div>

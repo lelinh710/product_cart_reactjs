@@ -1,16 +1,16 @@
-import './App.css';
-import React from 'react';
-import Navbar from './components/navbar';
-import { Route, Switch } from 'react-router-dom';
-import Cart from './components/cart';
-import ProductsList from './components/productsList';
-import ProductDetail from './components/productDetail';
+import "./App.css";
+import React from "react";
+import Navbar from "./components/navbar/navbar";
+import { Route, Switch } from "react-router-dom";
+import Cart from "./components/cart";
+import ProductDetail from "./components/productDetail/productDetail";
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import ProductsList from "./components/productList/productsList";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [qty, setQty] = useState(1);
   useEffect(() => {
     async function getAPI() {
       const { data: respone } = await axios.get(
@@ -24,16 +24,56 @@ function App() {
     getAPI();
     // console.log(product);
   }, []);
-  
+
+  const handleOnChange = (evt) => {
+    const value = evt.target.value;
+    setQty(value);
+  };
+  const handleIncrement = (q) => {
+    let plus = q + 1;
+    setQty(plus);
+  };
+
+  const handleDecrement = (quantity) => {
+    let minius = quantity - 1;
+    setQty(minius);
+  };
+
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar />
       <div className="content">
         <Switch>
-          
-          <Route path="/cart/:id" render={props => <Cart {...props} data={products}/>}/>
-          <Route path="/:id" render={props => <ProductDetail {...props} data={products}/>}/>
-          <Route path="/" render={props => <ProductsList {...props} data={products}/>}/>
+          <Route
+            path="/cart/:id"
+            render={(props) => <Cart {...props} data={products} />}
+          />
+          <Route
+            path="/:id"
+            render={(props) => (
+              <ProductDetail
+                {...props}
+                data={products}
+                onChangeQty={handleOnChange}
+                onDecrement={() => handleDecrement(qty)}
+                onIncrement={() => handleIncrement(qty)}
+                qty={qty}
+              />
+            )}
+          />
+          <Route
+            path="/"
+            render={(props) => (
+              <ProductsList
+                {...props}
+                data={products}
+                onChangeQty={handleOnChange}
+                onDecrement={() => handleDecrement(qty)}
+                onIncrement={() => handleIncrement(qty)}
+                qty={qty}
+              />
+            )}
+          />
         </Switch>
       </div>
     </div>
@@ -45,7 +85,7 @@ function App() {
 //     // const promise = axios.get('https://winkelwagon.herokuapp.com/api/products');
 //     console.log(axios.get('https://jsonplaceholder.typicode.com/posts'));
 //   }
-//   render() { 
+//   render() {
 //     return <div className="App">
 //     <Navbar/>
 //     <div className="content">
@@ -57,7 +97,5 @@ function App() {
 //   </div>;
 //   }
 // }
- 
+
 export default App;
-
-
