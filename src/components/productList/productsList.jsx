@@ -7,7 +7,7 @@ function ProductsList({ data }) {
     <div className="row justify-content-center text-center">
   <div className="col-md-8">
     <div className="header">
-      <h3>Featured Product</h3>
+      <h2>Featured Product</h2>
     </div>
     <div className="row">
     {data.map((product) => (

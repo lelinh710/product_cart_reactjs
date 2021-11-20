@@ -1,0 +1,19 @@
+.image_product{
+    width: 80%;
+    border-radius: 8px;
+}
+.col-lg-2 {
+    margin-left: 27px;
+}
+.image_product{
+    margin-bottom: 8px;
+}
+
+.list-group-item{
+    background-color: rgba(184, 235, 252, 0.4) !important;
+
+}
+
+.card {
+    background-color: rgba(209, 242, 253, 0.4) !important;
+}

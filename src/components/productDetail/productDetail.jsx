@@ -1,4 +1,5 @@
 import React from "react";
+import "./productDetail.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -20,21 +21,31 @@ function ProductDetail(props) {
 
   let { name, numReviews, description, price, image, countInStock } = product;
 
-
-
-
   return (
     <div className="row">
-      <h1> SHOPPING BAG</h1>
-      <div className="col-lg-6">
-        <h3>{countInStock} products in stock</h3>
-        <img src={`https://winkelwagon.herokuapp.com${image}`} alt="" />
-        <h2>{name}</h2>
-      </div>
-      <div className="col-lg-3">
-        <h4>{numReviews}</h4>
-        <h4>{price}</h4>
-        <h4>{description}</h4>
+      <h2> Shopping Bag</h2>
+      <div className="col-lg-2"></div>
+      <div className="col-lg-5">
+       <div className="row">
+       <div className="col-lg-12">
+          <h6>{countInStock} sản phẩm có sẵn</h6>
+          <hr />
+        </div>
+        <div className="col-lg-5">
+        <img
+            className="image_product"
+            src={`https://winkelwagon.herokuapp.com${image}`}
+            alt=""
+          />
+          <h5>{name}</h5>
+        </div>
+        <div className="col-lg-7">
+          <br />
+          <h5>Số lượng review: {numReviews}</h5>
+          <h5>Giá: {price}</h5>
+          <h5>Mô tả sản phẩm: {description}</h5>
+        </div>
+       </div>
       </div>
       <div className="col-lg-3">
         <div className="card">
@@ -121,4 +132,3 @@ function ProductDetail(props) {
 }
 
 export default ProductDetail;
-

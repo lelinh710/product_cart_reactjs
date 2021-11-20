@@ -12,5 +12,14 @@ code {
     monospace;
 }
 html{
-  background-color: rgb(194, 230, 247);
+  background-color: rgba(143, 219, 255, 0.4);
+}
+
+@media (max-width: 1023px) {
+  .nav__bars-btn {
+    display: block;
+  }
+  .nav__pc {
+    display: none;
+  }
 }
