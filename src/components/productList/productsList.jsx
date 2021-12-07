@@ -5,7 +5,7 @@ import ProductItem from "../productItem/productItem";
 function ProductsList({ data }) {
   return (
     <div className="row justify-content-center text-center">
-  <div className="col-md-8">
+  <div className="col-md-12">
     <div className="header">
       <h2>Featured Product</h2>
     </div>

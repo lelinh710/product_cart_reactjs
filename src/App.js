@@ -34,8 +34,8 @@ function App() {
     setQty(plus);
   };
 
-  const handleDecrement = (quantity) => {
-    let minius = quantity - 1;
+  const handleDecrement = (q) => {
+    let minius = q - 1;
     setQty(minius);
   };
 
@@ -45,7 +45,7 @@ function App() {
       <div className="content">
         <Switch>
           <Route
-            path="/cart/:id"
+            path="/cart/:id?"
             render={(props) => <Cart {...props} data={products} />}
           />
           <Route

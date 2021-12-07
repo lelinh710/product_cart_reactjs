@@ -1,5 +1,5 @@
 .image_product{
-    width: 80%;
+    width: 100%;
     border-radius: 8px;
 }
 .col-lg-2 {
@@ -9,6 +9,10 @@
     margin-bottom: 8px;
 }
 
+.list-group {
+    border-radius: 10px !important;
+}
+
 .list-group-item{
     background-color: rgba(184, 235, 252, 0.4) !important;
 
@@ -16,4 +20,14 @@
 
 .card {
     background-color: rgba(209, 242, 253, 0.4) !important;
+}
+
+input {
+    text-align: center;
+    width: 17%;
+}
+
+.quantity_www {
+    width: 11%;
+    height: 11%
 }

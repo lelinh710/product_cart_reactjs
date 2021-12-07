@@ -1,10 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
 
 function Cart(props) {
   const { match, data, onDecrement, OnIncrement, onChangeQty, qty } = props;
-
+  console.log(props);
   const [quantity, setQuantity] = useState(1);
 
   const [cart, setCart] = useState([]);
