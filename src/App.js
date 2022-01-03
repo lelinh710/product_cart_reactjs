@@ -10,6 +10,7 @@ import ProductsList from "./components/productList/productsList";
 
 // lllllllllllllllllll
 
+//main
 function App() {
   const [products, setProducts] = useState([]);
   const [qty, setQty] = useState(1);
